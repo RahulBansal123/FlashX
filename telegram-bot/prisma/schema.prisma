@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id      String  @id @default(uuid())
+  userId  String   @unique @db.VarChar(255)
+  first_name    String  @db.VarChar(255)
+  last_name    String?  @db.VarChar(255)
+  username    String  @db.VarChar(255)
+
+  privateKey String? @db.VarChar(255)
+  wallet_address String?  @db.VarChar(255)
+
+  lastSeenAt DateTime @default(now()) @db.Timestamp(6)
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+
+  orders Order[]
+
+  @@index([userId])
+}
+
+model Order {
+  id     String  @id @default(uuid())
+
+  type   String  @db.VarChar(255)
+  token  String  @db.VarChar(255)
+  amount String  @db.VarChar(255)
+  collateral String  @db.VarChar(255)
+  leverage String  @db.VarChar(255)
+  triggerPrice String?  @db.VarChar(255)
+
+  entryPrice String  @db.VarChar(255)
+  liquidationPrice String  @db.VarChar(255)
+  fees String  @db.VarChar(255)
+
+  executionFeeTokenAmount String  @db.VarChar(255)
+
+  txPayload String @db.Text
+
+  userId String  @db.VarChar(255)
+  user User @relation(fields: [userId], references: [userId])
+
+  status  OrderStatus @default(PENDING)
+
+  txHash String? @db.VarChar(255)
+
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+enum OrderStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CLOSED
+  FAILED_TO_CLOSE
+}

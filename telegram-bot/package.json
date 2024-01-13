@@ -1,0 +1,39 @@
+{
+  "name": "flashx-bot",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts",
+    "postinstall": "npx prisma generate",
+    "update:schema": "prisma generate && prisma db push",
+    "check-types": "tsc --noEmit --pretty"
+  },
+  "dependencies": {
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/shims": "^5.7.0",
+    "@ethersproject/solidity": "^5.7.0",
+    "@prisma/client": "^5.7.1",
+    "@urql/core": "^4.2.2",
+    "axios": "^1.5.0",
+    "ethers": "5.6.8",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "jsbi": "^4.3.0",
+    "lodash": "^4.17.21",
+    "lodash.keyby": "^4.6.0",
+    "lru-cache": "^10.1.0",
+    "node-telegram-bot-api": "^0.63.0",
+    "query-string": "^8.1.0",
+    "viem": "^1.21.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node-telegram-bot-api": "^0.61.7",
+    "bun-types": "latest",
+    "prisma": "^5.7.1",
+    "typescript": "*"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
