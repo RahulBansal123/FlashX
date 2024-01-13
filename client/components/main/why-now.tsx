@@ -37,7 +37,11 @@ export const WhyNow = () => {
   const isInView = useInView(ref);
 
   return (
-    <div className="py-24 sm:py-32 px-20 bg-[#F2F2DF]" id="why-now" ref={ref}>
+    <div
+      className="mx-[-1.25rem] md:mx-[-2.5rem] lg:mx-[-5rem] px-5 md:px-10 lg:px-20 py-24 sm:py-32 bg-[#F2F2DF]"
+      id="why-now"
+      ref={ref}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <div>

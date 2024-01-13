@@ -24,7 +24,7 @@ export const Guide = () => {
   return (
     <div className="flex flex-col items-center justify-center" id="guide">
       <h1 className="text-4xl font-semibold text-gray-200">GUIDES</h1>
-      <div className="mt-16 sm:mt-20 lg:mt-24 h-full w-fit grid grid-cols-1 md:grid-cols-2 gap-10 px-20">
+      <div className="mt-16 sm:mt-20 lg:mt-24 h-full w-fit grid grid-cols-1 md:grid-cols-2 gap-10">
         {guides.map(guide => (
           <Card key={guide.id} src={guide.src} title={guide.title} description={guide.description} link={guide.link} />
         ))}

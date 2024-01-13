@@ -4,7 +4,7 @@ import React from 'react';
 
 export const Navbar = () => {
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#313030]/50 bg-[#313030]/20 backdrop-blur-md z-50 px-20">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#313030]/50 bg-[#313030]/20 backdrop-blur-md z-50 container max-w-7xl px-5 md:px-10 lg:px-20">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <a href="/" className="h-auto w-auto flex flex-row items-center">
           <Image
@@ -15,10 +15,10 @@ export const Navbar = () => {
             className="cursor-pointer hover:animate-slowspin"
           />
 
-          <span className="font-bold hidden ml-1 md:block text-gray-300">FlashX</span>
+          <span className="font-bold ml-1 block text-gray-300">FlashX</span>
         </a>
 
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
+        <div className="flex-1 max-w-[500px] h-full hidden md:flex flex-row items-center justify-between">
           <div className="flex items-center justify-between w-full h-auto border border-[#575750] bg-[#313030]/20 mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="#features" className="cursor-pointer">
               Features
@@ -32,7 +32,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-x-5">
+        <div className="hidden lg:flex items-center gap-x-5">
           {socials.map(social => (
             <a href={social.link} key={social.name} target="_blank">
               <social.icon className="text-2xl text-gray-300 hover:text-gray-400 cursor-pointer" />

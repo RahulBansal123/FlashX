@@ -3,9 +3,9 @@ import { socials } from '@/constants';
 
 export const Footer = () => {
   return (
-    <div className="mt-40 w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
+    <div className="mt-40 w-full h-full bg-transparent text-gray-200 shadow-lg">
       <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full flex items-start justify-around flex-wrap">
+        <div className="w-full h-full grid grid-cols-2">
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
             <div className="font-bold text-[16px]">Community</div>
 
@@ -18,6 +18,7 @@ export const Footer = () => {
               ))}
             </div>
           </div>
+
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
             <div className="font-bold text-[16px]">About</div>
 

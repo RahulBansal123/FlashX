@@ -15,7 +15,7 @@ export const socials = [
   {
     name: 'GitHub',
     icon: FaGithub,
-    link: 'https://mirror.xyz/0x19d7D363B2381E53FD171eb74073D560C7Bd319E',
+    link: 'https://github.com/RahulBansal123/flashx',
   },
   {
     name: 'Mirror',
