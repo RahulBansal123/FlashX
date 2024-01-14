@@ -5,7 +5,7 @@ import { WhyNow } from '@/components/main/why-now';
 
 export default function Home() {
   return (
-    <main className="container max-w-7xl relative h-full w-full flex flex-col gap-y-10 px-5 md:px-10 lg:px-20">
+    <main className="relative h-full w-full flex flex-col gap-y-10 px-5 md:px-10 lg:px-20">
       <Hero />
       <Features />
       <WhyNow />
